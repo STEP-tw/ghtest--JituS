@@ -35,7 +35,7 @@ function getRepos(response) {
     	var result = JSON.parse(str);
     	console.log("User " + user + " has total " + result.length + " repos:\n______________________________")
     	result.map(function(each) {
-    		getData("/repos/jitus/" + each.name + "/commits", getCommitsCallback(each.name, each.language, each.created_at.split("T")[0]));
+    		getData("/repos/" + user + "/" + each.name + "/commits", getCommitsCallback(each.name, each.language, each.created_at.split("T")[0]));
     	});
     });
 }
